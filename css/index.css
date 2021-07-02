@@ -1,0 +1,509 @@
+@font-face {
+    font-family: "NotoSansArmenian-Light";
+    src: url("../fonts/NotoSansArmenian-Light.ttf");
+}
+@font-face {
+    font-family: "NotoSansArmenian-bold";
+    src: url("../fonts/NotoSansArmenian-Bold.ttf");
+}
+@font-face {
+    font-family: "NotoSansArmenian-Medium";
+    src: url("../fonts/NotoSansArmenian-Medium.ttf");
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "NotoSansArmenian-Light";
+}
+*:focus {
+    outline: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+    transition: all 300ms ease-out;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    min-width: 280px;
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+.overflow {
+    overflow: hidden;
+}
+img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+header {
+    position: sticky;
+    z-index: 100;
+    max-width: 1920px;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.header_block {
+    height: 80px;
+    background-color: white;
+    box-shadow: 0px .1px 40px .1px #bfbfbf;
+}
+.wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+.logo_img {
+    width: 100px;
+    height: 40px;
+}
+.logo_nav_bar_block {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+.nav_bar a {
+    width: max-content;
+    font-weight: bold;
+    font-family: "NotoSansArmenian-bold";
+    font-style: normal;
+    font-size: 22px;
+    color: gray;
+    cursor: pointer;
+}
+.nav_bar a:hover {
+    color: orangered;
+    transition: all 300ms ease-in;
+}
+/* main */
+/* welcome section */
+.welcome_section {
+    background-color: orangered;
+    width: 100%;
+    height: 100vh;
+}
+.welcome_title_info_block {
+    padding: 100px 0 0 150px;
+}
+.welcome_title {
+    width: 800px;
+    font-weight: bold;
+    font-family: "NotoSansArmenian-bold";
+    font-style: normal;
+    font-size: 45px;
+    color: white;
+}
+.welcome_text {
+    width: 800px;
+    font-weight: bold;
+    font-family: "NotoSansArmenian-bold";
+    font-style: normal;
+    font-size: 36px;
+    color: white;
+    margin: 15px 0;
+}
+.welcome_phone {
+    width: 800px;
+    font-weight: bold;
+    font-family: "NotoSansArmenian-bold";
+    font-style: normal;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 15px;
+}
+.welcome_phone a {
+    width: 800px;
+    font-weight: bold;
+    font-family: "NotoSansArmenian-bold";
+    font-style: normal;
+    font-size: 36px;
+    color: white;
+}
+.welcome_phone a:hover {
+    color: black;
+    transition: all 300ms ease-in;
+}
+.online_form {
+    border: 1px solid white;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 20px;
+    padding: 5px 15px;
+    font-weight: bold;
+    font-family: "NotoSansArmenian-medium";
+    font-style: normal;
+    transition: all 300ms ease-out;
+    box-shadow: 5px 5px 5px 3px rgb(0 0 0 / 50%);
+    display: block;
+    width: 252px;
+}
+.online_form:hover {
+    background-color: transparent;
+    color: white;
+    transition: all 300ms ease-in;
+}
+/* welcome section end */
+
+/* page_info_section */
+.page_info_section {
+    background-color: rgb(234, 234, 234);
+    width: 100%;
+}
+.page_info_block {
+    padding: 45px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    column-gap: 40px;
+    row-gap: 20px;
+    height: 250px;
+}
+.money_btn {
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: black;
+    font-size: 20px;
+    padding: 5px 15px;
+    font-weight: bold;
+    font-family: "NotoSansArmenian-medium";
+    font-style: normal;
+    transition: all 300ms ease-out; 
+    color: white;
+    box-shadow: 5px 5px 5px 3px rgb(0 0 0 / 50%);
+    display: block;
+    width: 252px;
+}
+.money_btn:hover {
+    background-color: transparent;
+    color: black;
+    transition: all 300ms ease-in;
+}
+.money_block {
+    text-align: right;
+}
+.money_size_text {
+    font-weight: normal;
+    font-family: "NotoSansArmenian-bold";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    color: black;
+}
+.money_info_text {
+    font-weight: normal;
+    font-family: "NotoSansArmenian-Light";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    color: black;
+}
+/* page_info_section end */
+
+/* form_section end */
+.form_section {
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #053E8B 0%, #4997FF 100%);
+    padding: 45px 0;
+}
+.info_form_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info_text_form_block {
+    width: 100%;
+    max-width: 400px;
+}
+.info_text_form_block h3 {
+    color: #FFFFFF;
+    font-family: "NotoSansArmenian-bold";
+    font-size: 36px;
+    font-weight: 600;
+}
+.info_text_form_block p {
+    margin: 10px 0;
+    color: #FFFFFF;
+    font-family: "NotoSansArmenian-medium";
+    font-size: 16px;
+    font-weight: 500;
+}
+.info_text_form_block span {
+    margin: 10px 0;
+    color: #FFFFFF;
+    font-family: "NotoSansArmenian-Light";
+    font-size: 12px;
+    font-weight: 400;
+}
+.form_block {
+    background-color: white;
+    padding: 10px 15px;
+    max-width: 260px;
+    width: 100%;
+}
+.form_block h4 {
+    color: black;
+    font-family: "NotoSansArmenian-bold";
+    font-size: 24px;
+    font-weight: 600;
+}
+.form_block form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.form_inp::-webkit-outer-spin-button,
+.form_inp::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form_inp[type=number] {
+  -moz-appearance: textfield;
+}
+.form_inp {
+    width: 100%;
+    height: 40px;
+    padding: 5px 10px;
+    background-color: rgb(234, 234, 234);
+    border-radius: 6px;
+    border: 1px solid rgb(183, 183, 183);
+    color: black;
+    font-size: 14px;
+}
+.form_inp::placeholder {
+    color: black;
+    font-family: "NotoSansArmenian-Light";
+    font-size: 12px;
+    font-weight: 300;
+}
+.btn_send_form {
+    height: 40px;
+    font-family: "NotoSansArmenian-bold";
+    cursor: pointer;
+    background-color: red;
+    border: 1px solid red;
+    color: black;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: all 300ms ease-out;
+}
+.btn_send_form:hover {
+    background-color: transparent;
+    border: 1px solid red;
+    color: red;
+    transition: all 300ms ease-in;
+}
+.your_info p {
+    color: black;
+    font-family: "NotoSansArmenian-bold";
+    font-size: 14px;
+    font-weight: 400;
+}
+.radio_block {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+} 
+.radio_block label {
+    color: black;
+    font-family: "NotoSansArmenian-bold";
+    font-size: 16px;
+    font-weight: bold;
+} 
+.right_label {
+    margin-right: 15px;
+}
+/* form_section end */
+
+/* whate_section */
+.whate_section {
+    background-color: rgb(234, 234, 234);
+    width: 100%;
+    padding: 45px 0;
+}
+.our_block {
+    text-align: center;
+}
+.our_block_title {
+    color: black;
+    font-family: "NotoSansArmenian-bold";
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.our_block_text {
+    margin: 0 auto;
+    max-width: 800px;
+    color: black;
+    font-family: "NotoSansArmenian-medium";
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+.arm_men_block {
+    display: flex;
+    justify-content: space-between;
+}
+.arm_men_block .our_block_text {
+    width: 250px;
+}
+.what_option_block {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+.option_block {
+    max-width: 280px;
+    width: 100%;
+    text-align: left;
+}
+.option_block_img {
+    width: 100%;
+    height: 240px;
+}
+.option_block_bg {
+    width: max-content;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    font-family: "NotoSansArmenian-medium";
+    font-size: 18px;
+    font-weight: normal;
+    margin: 20px 0;
+}
+.option_block_text {
+    color: black;
+    font-family: "NotoSansArmenian-medium";
+    font-size: 18px;
+    font-weight: normal;
+}
+/* whate_section end */
+
+/* about_us */
+.about_us {
+    background-color: rgb(234, 234, 234);
+    width: 100%;
+    padding: 45px 0;
+}
+.about_us .our_block_title {
+    text-align: center;
+}
+.map_call_block {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+.call_img_phone_block {
+    width: 45%;
+}
+.call_img_phone_block img {
+    height: 500px;
+}
+.call_img_phone_text {
+    margin: 10px 0;
+    color: black;
+    font-family: "NotoSansArmenian-bold";
+    font-size: 20px;
+    font-weight: normal;
+}
+.call_img_phone_block span a {
+    color: black;
+    font-family: "NotoSansArmenian-medium";
+    font-size: 20px;
+    font-weight: normal;
+}
+.call_img_phone_block span a:hover {
+    color: orangered;
+}
+.map_block {
+    width: 45%;
+    height: 700px;
+}
+.map {
+    width: 100%;
+    height: 100%;
+}
+/* about_us end */
+
+/* footer */
+footer {
+    background-color: rgb(234, 234, 234);
+    width: 100%;
+    padding: 45px 0;
+}
+.us_contact_back_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 40px;
+}
+.about_us_footer , .contacts_footer , .back_footer {
+    max-width: 330px;
+    width: 100%;
+}
+.footer_title {
+    color: black;
+    font-family: "NotoSansArmenian-bold";
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.us_contact_back_block span {
+    color: black;
+    font-family: "NotoSansArmenian-Light";
+    font-size: 16px;
+    font-weight: normal;
+}
+.footer_phone_number {
+    margin-top: 10px;
+}
+.footer_phone_number a {
+    color: black;
+    font-family: "NotoSansArmenian-bold";
+    font-size: 24px;
+    font-weight: bold;
+}
+.footer_phone_number a:hover {
+    color: orangered;
+}
+/* footer end */
+
+#page {
+    position: relative;
+}
+.up_btn {
+    cursor: pointer;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    padding: 18px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 5px 5px 5px 3px rgb(0 0 0 / 50%);
+}
+.up_btn svg {
+    transform: rotate(180deg);
+}
+.burger_btn {
+    display: none;
+}
+.special_menu_burger {
+    display: none;
+}
