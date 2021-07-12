@@ -83,6 +83,7 @@ header {
     font-size: 22px;
     color: gray;
     cursor: pointer;
+    text-transform: capitalize;
 }
 .nav_bar a:hover {
     color: orangered;
