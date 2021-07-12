@@ -508,3 +508,9 @@ footer {
 .special_menu_burger {
     display: none;
 }
+.typy_number_form {
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    font-family: "NotoSansArmenian-bold";
+}
