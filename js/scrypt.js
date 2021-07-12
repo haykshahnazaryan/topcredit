@@ -9,8 +9,7 @@ $(document).ready(function(){
     });
 	
 		
-    $('.btn_send_form').click(function(e) {
-	e.preventDefault();  
+    $('.btn_send_form').click(function() { 
         $('#contactform').attr('action', 'mailto:armen.safs@gmail.com?subject=Jeannette Chambliss Digital Portfolio' +
             $('#fname').val() + '&body=' + $('#birthday').val() + '&body=' + $('#phone').val() + '&body=' + $('#money').val() + '&body=' 
 	     + $('#yes').val() + '&body=' + $('#no').val() + '&body=' + $('#no_two').val() + '&body=' + $('#yes_two').val() + '&body=');
