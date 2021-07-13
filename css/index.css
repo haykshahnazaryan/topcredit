@@ -42,6 +42,11 @@ img {
     display: block;
     object-fit: cover;
 }
+input {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}
 header {
     position: sticky;
     z-index: 100;
