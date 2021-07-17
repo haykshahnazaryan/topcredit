@@ -28,9 +28,9 @@ session_start();
 error_reporting(E_ALL);
 date_default_timezone_set("America/Sao_Paulo");
 
-require_once("php-mailer/PHPMailer.php");
-require_once("php-mailer/SMTP.php");
-require_once("php-mailer/Exception.php");
+require_once("PHPMailer.php");
+require_once("SMTP.php");
+require_once("Exception.php");
 
 use PHPMailer\PHPMailer\PHPMailer;
 
