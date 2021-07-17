@@ -2,19 +2,15 @@
     if(!isset($_POST['phone'])) {
         header('Location: https://topcredit.am/');
     } else {
-        $phon = $_POST['fname'];
-        $phon = $_POST['birthday'];
+        $name = $_POST['fname'];
+        $birtday = $_POST['birthday'];
         $phon = $_POST['phone'];
-        $phon = $_POST['money'];
-        $phon = $_POST['yes'];
-        $phon = $_POST['no'];
-        $phon = $_POST['yes_two'];
-        $masseg = $_POST['no_two'];
+        $money = $_POST['money'];
         //echo $phone."<br>".$massege;
 
         $to='armen.safs@gmail.com';
         $subject='тема сообщений';
-        $massege ="что интересует: ".$masseg."\r\n тел: ".$phon;
+        $massege ="name: ".$name."\r\n birtday: ".$birtday."\r\n phone: ".$phon."\r\n money: ".$money;
 
         mail ($to, $subject, $massege);
 
