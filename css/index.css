@@ -42,7 +42,7 @@ img {
     display: block;
     object-fit: cover;
 }
-input {
+input.btn_send_form {
 -webkit-appearance: none;
 -moz-appearance: none;
 appearance: none;
