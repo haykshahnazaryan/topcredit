@@ -503,7 +503,7 @@ footer {
     border-radius: 50%;
     background-color: transparent;
     border: 1px solid white;
-    box-shadow: 5px 5px 5px 3px rgb(0 0 0 / 50%);
+    box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 50%);
     transition: all 300ms ease-out;
 }
 .up_btn:hover {
