@@ -7,11 +7,6 @@ $(document).ready(function(){
         $('.special_menu_burger').removeClass("special_menu_burger_active");
         $('#body').removeClass("overflow");
     });
-	
-
-	
-	
-	
 });
 
 var map;
