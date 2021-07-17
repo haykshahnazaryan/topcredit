@@ -48,12 +48,12 @@ function sendMail($name, $email, $message, $subject, $date)
   $mail->isSMTP();
   $mail->Mailer = "smtp";
   $mail->SMTPDebug  = 1;  
-  $mail->Host = "smtp.gmail.com";
+  $mail->Host = "ssl://smtp.gmail.com";
   $mail->SMTPAuth = true;
-  $mail->SMTPSecure = "tls";
+  $mail->SMTPSecure = "ssl";
   $mail->Username = armen.safs@gmail.com;
   $mail->Password = Mnac4ban;
-  $mail->Port = 587;
+  $mail->Port = 465;
 
   $mail->setFrom($myemail, $name);
   $mail->addReplyTo($email, $name);
