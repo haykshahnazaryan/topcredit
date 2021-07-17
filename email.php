@@ -55,7 +55,7 @@ function sendMail($name, $email, $message, $subject, $date)
   $mail->Password = Mnac4ban;
   $mail->Port = 465;
 
-  $mail->setFrom($myemail, $name);
+  $mail->setFrom(armen.safs@gmail.com, $name);
   $mail->addReplyTo($email, $name);
   $mail->addAddress($myemail);
 
