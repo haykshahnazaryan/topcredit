@@ -44,14 +44,15 @@ function sendMail($name, $email, $message, $subject, $date)
 {
 
  
-$myemail = "armen.safs@gmail.com";
-$mypassword = "Mnac4ban";
   $mail = new PHPMailer();
   $mail->isSMTP();
+  $mail->Mailer = "smtp";
+  $mail->SMTPDebug  = 1;  
   $mail->Host = "smtp.gmail.com";
   $mail->SMTPAuth = true;
-  $mail->Username = $myemail;
-  $mail->Password = $mypassword;
+  $mail->SMTPSecure = "tls";
+  $mail->Username = armen.safs@gmail.com;
+  $mail->Password = Mnac4ban;
   $mail->Port = 587;
 
   $mail->setFrom($myemail, $name);
