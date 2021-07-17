@@ -1,7 +1,7 @@
 <?php
-require 'PHPMailer.php';
-require 'SMTP.php';
-require 'Exception.php';
+require './PHPMailer.php';
+require './SMTP.php';
+require './Exception.php';
 
 $birtday = $_POST['birthday'];
 $phon = $_POST['phone'];
