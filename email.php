@@ -1,94 +1,83 @@
 <?php
-// if(isset($_POST['phone'])) {
-//     echo $_POST['phone'];
-// }
-//     if(!isset($_POST['phone'])) {
-//         header('Location: https://topcredit.am/');
-//     } else {
-//         $name = $_POST['fname'];
-//         $birtday = $_POST['birthday'];
-//         $phon = $_POST['phone'];
-//         $money = $_POST['money'];
-//         //echo $phone."<br>".$massege;
+require 'PHPMailer.php';
+require 'SMTP.php';
+require 'Exception.php';
 
-//         $to='armen.safs@gmail.com';
-//         $subject='тема сообщений';
-//         $body ="name: ".$name."\r\n birtday: ".$birtday."\r\n phone: ".$phon."\r\n money: ".$money;
+$birtday = $_POST['birthday'];
+$phon = $_POST['phone'];
+$money = $_POST['money'];
+$name = $_POST['fname'];
 
-//         mail ($to, $subject, $massege);
+$title = "VERNAGIR";
+$body = "
+	<h2>Новое письмо</h2>
+	<b>Name:</b> $name<br>
+	<b>Birthday:</b> $birtday<br>
+	<b>Money:</b>$money<br>
+	<b>Phone:</b>$phon<br>
+";
 
-//         header('Location: https://topcredit.am/');
-//     }
-?>
+$mail = new PHPMailer\PHPMailer\PHPMailer();
+try {
+    $mail->isSMTP();   
+    $mail->CharSet = "UTF-8";
+    $mail->SMTPAuth   = true;
+    //$mail->SMTPDebug = 2;
+    $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
+    // Настройки вашей почты
+    $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
+    $mail->Username   = 'armen.safs@gmail.com'; // Логин на почте
+    $mail->Password   = 'Mnac4ban'; // Пароль на почте
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port       = 465;
+    $mail->setFrom('armen.safs@gmail.com', 'Armen'); // Адрес самой почты и имя отправителя
 
-<?php
+    // Получатель письма
+    $mail->addAddress('armen.safs@gmail.com');  
 
-session_start();
-error_reporting(E_ALL);
-date_default_timezone_set("America/Sao_Paulo");
+    // Прикрипление файлов к письму
+if (!empty($file['name'][0])) {
+    for ($ct = 0; $ct < count($file['tmp_name']); $ct++) {
+        $uploadfile = tempnam(sys_get_temp_dir(), sha1($file['name'][$ct]));
+        $filename = $file['name'][$ct];
+        if (move_uploaded_file($file['tmp_name'][$ct], $uploadfile)) {
+            $mail->addAttachment($uploadfile, $filename);
+            $rfile[] = "Файл $filename прикреплён";
+        } else {
+            $rfile[] = "Не удалось прикрепить файл $filename";
+        }
+    }   
+}
+// Отправка сообщения
+$mail->isHTML(true);
+$mail->Subject = $title;
+$mail->Body = $body;    
 
-require_once("PHPMailer.php");
-require_once("SMTP.php");
-require_once("Exception.php");
+// Проверяем отравленность сообщения
+if ($mail->send()) {$result = "success";} 
+else {$result = "error";}
 
-use PHPMailer\PHPMailer\PHPMailer;
-
-function redirectToIndex()
-{
-  header("Location: ./index.php");
-  exit;
+} catch (Exception $e) {
+    $result = "error";
+    $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
 }
 
-function sendMail($name, $email, $message, $subject, $date)
-{
-
- 
-  $mail = new PHPMailer();
-  $mail->isSMTP();
-  $mail->Mailer = "smtp";
-  $mail->SMTPDebug  = 1;  
-  $mail->Host = "ssl://smtp.gmail.com";
-  $mail->SMTPAuth = true;
-  $mail->SMTPSecure = "ssl";
-  $mail->Username = armen.safs@gmail.com;
-  $mail->Password = Mnac4ban;
-  $mail->Port = 465;
-
-  $mail->setFrom(armen.safs@gmail.com, $name);
-  $mail->addReplyTo($email, $name);
-  $mail->addAddress($myemail);
-
-  $mail->isHTML(true);
-  $mail->Subject = $subject;
-  $mail->Body = "<b>Name:</b> {$name}<br><b>Email:</b> {$email}<br><br><b>Message:</b><br><br>
-    {$message}<br><br><b>Date:</b> {$date}";
-
-  if ($mail->send()) {
-    $_SESSION["mail_success"] = true;
-  } else {
-    $_SESSION["mail_error"] = true;
-  }
-
-  redirectToIndex();
-}
-
-
+// Отображение результата
+echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status]);
 function start()
 {
 	
   if (
     !isset($_POST['phone'])
   ) {
-$birtday = $_POST['birthday'];
-        $phon = $_POST['phone'];
-        $money = $_POST['money'];
-	  
+    $birtday = $_POST['birthday'];
+    $phon = $_POST['phone'];
+    $money = $_POST['money'];
     $name = $_POST['fname'];
-    $email = "esa";
     $message = "name: ".$name."\r\n birtday: ".$birtday."\r\n phone: ".$phon."\r\n money: ".$money;
     $subject = "Contact";
-    $date = $birtday;
+    
 
     sendMail($name, $email, $message, $subject, $date);
   } else {
