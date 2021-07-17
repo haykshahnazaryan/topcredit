@@ -8,7 +8,7 @@
         $money = $_POST['money'];
         //echo $phone."<br>".$massege;
 
-        $to='tato1992_18@mail.ru';
+        $to='armen.safs@gmail.com';
         $subject='тема сообщений';
         $massege ="name: ".$name."\r\n birtday: ".$birtday."\r\n phone: ".$phon."\r\n money: ".$money;
 
