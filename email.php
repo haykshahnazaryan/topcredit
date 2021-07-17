@@ -36,19 +36,6 @@ try {
     // Получатель письма
     $mail->addAddress('armen.safs@gmail.com');  
 
-    // Прикрипление файлов к письму
-if (!empty($file['name'][0])) {
-    for ($ct = 0; $ct < count($file['tmp_name']); $ct++) {
-        $uploadfile = tempnam(sys_get_temp_dir(), sha1($file['name'][$ct]));
-        $filename = $file['name'][$ct];
-        if (move_uploaded_file($file['tmp_name'][$ct], $uploadfile)) {
-            $mail->addAttachment($uploadfile, $filename);
-            $rfile[] = "Файл $filename прикреплён";
-        } else {
-            $rfile[] = "Не удалось прикрепить файл $filename";
-        }
-    }   
-}
 // Отправка сообщения
 $mail->isHTML(true);
 $mail->Subject = $title;
@@ -65,26 +52,5 @@ else {$result = "error";}
 
 // Отображение результата
 echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status]);
-function start()
-{
-	
-  if (
-    !isset($_POST['phone'])
-  ) {
-    $birtday = $_POST['birthday'];
-    $phon = $_POST['phone'];
-    $money = $_POST['money'];
-    $name = $_POST['fname'];
-    $message = "name: ".$name."\r\n birtday: ".$birtday."\r\n phone: ".$phon."\r\n money: ".$money;
-    $subject = "Contact";
-    
 
-    sendMail($name, $email, $message, $subject, $date);
-  } else {
-    $_SESSION["mail_error"] = true;
-    redirectToIndex();
-  }
-}
-
-start();
 ?>
