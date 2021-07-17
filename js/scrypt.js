@@ -9,18 +9,18 @@ $(document).ready(function(){
     });
 });
 
-var map;
-function initMap() {
-	map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 40.183022, lng: 44.516913},
-		zoom: 16,
-	});
-	marker = new google.maps.Marker({
-	    position: {lat: 40.183022, lng: 44.516913},
-	    map: map,
-	    title: 'EHK',
-	    icon: 'img/logo_page.png',
-        icon: {url:'img/logo_page.png', 
-    	scaledSize: new google.maps.Size(90, 30)},
-	});
-}
+// var map;
+// function initMap() {
+// 	map = new google.maps.Map(document.getElementById('map'), {
+// 		center: {lat: 40.183022, lng: 44.516913},
+// 		zoom: 16,
+// 	});
+// 	marker = new google.maps.Marker({
+// 	    position: {lat: 40.183022, lng: 44.516913},
+// 	    map: map,
+// 	    title: 'EHK',
+// 	    icon: 'img/logo_page.png',
+//         icon: {url:'img/logo_page.png', 
+//     	scaledSize: new google.maps.Size(90, 30)},
+// 	});
+// }
