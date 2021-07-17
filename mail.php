@@ -2,71 +2,98 @@
 // if(isset($_POST['phone'])) {
 //     echo $_POST['phone'];
 // }
-    if(!isset($_POST['phone'])) {
-        header('Location: https://topcredit.am/');
-    } else {
-        $name = $_POST['fname'];
-        $birtday = $_POST['birthday'];
-        $phon = $_POST['phone'];
-        $money = $_POST['money'];
-        //echo $phone."<br>".$massege;
+//     if(!isset($_POST['phone'])) {
+//         header('Location: https://topcredit.am/');
+//     } else {
+//         $name = $_POST['fname'];
+//         $birtday = $_POST['birthday'];
+//         $phon = $_POST['phone'];
+//         $money = $_POST['money'];
+//         //echo $phone."<br>".$massege;
 
-        $to='armen.safs@gmail.com';
-        $subject='тема сообщений';
-        $body ="name: ".$name."\r\n birtday: ".$birtday."\r\n phone: ".$phon."\r\n money: ".$money;
+//         $to='armen.safs@gmail.com';
+//         $subject='тема сообщений';
+//         $body ="name: ".$name."\r\n birtday: ".$birtday."\r\n phone: ".$phon."\r\n money: ".$money;
 
 //         mail ($to, $subject, $massege);
 
 //         header('Location: https://topcredit.am/');
-    }
+//     }
 ?>
 
 
 <?php
 
+session_start();
+error_reporting(E_ALL);
+date_default_timezone_set("America/Sao_Paulo");
+
+require_once("php-mailer/PHPMailer.php");
+require_once("php-mailer/SMTP.php");
+require_once("php-mailer/Exception.php");
+
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
-include_once "PHPMailer/PHPMailer.php";
-include_once "PHPMailer/Exception.php";
-include_once "PHPMailer/SMTP.php";
+function redirectToIndex()
+{
+  header("Location: ./index.php");
+  exit;
+}
 
-function send_mail($to,$subject,$body){
-// Import PHPMailer classes into the global namespace
-// These must be at the top of your script, not inside a function
+function sendMail($name, $email, $message, $subject, $date)
+{
 
+  include './config.php';
 
-$mail = new PHPMailer(true);                                 // Passing `true` enables exceptions
+  $mail = new PHPMailer();
+  $mail->isSMTP();
+  $mail->Host = "smtp.gmail.com";
+  $mail->SMTPAuth = true;
+  $mail->Username = armen.safs@gmail.com;
+  $mail->Password = Mnac4ban;
+  $mail->Port = 587;
 
-    //Server settings
-    $mail->SMTPDebug = 0;                                     // Enable verbose debug output
-    $mail->isSMTP();                                         // Set mailer to use SMTP
-    $mail->Host = 'www.gmail.com';                       	// Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                                // Enable SMTP authentication
-    $mail->Username = 'armen.safs@gmail.com';               // SMTP username
-    $mail->Password = 'Mnac4ban';                              // SMTP password
-    $mail->SMTPSecure = 'tls';                          // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 587;                                 // TCP port to connect to
+  $mail->setFrom($myemail, $name);
+  $mail->addReplyTo($email, $name);
+  $mail->addAddress($myemail);
 
-    //Recipients
-    $mail->setFrom('armen.safs@gmail.com', 'Armen');				//SET "FROM" EMAIL AND NAME. 
-	// IT SHOULD BE LIKE THIS, $mail->setFrom('info@hackerrahul.com', 'HackerRahul');
-    
-	
-	$mail->addAddress($to);            							// Add a recipient
+  $mail->isHTML(true);
+  $mail->Subject = $subject;
+  $mail->Body = "<b>Name:</b> {$name}<br><b>Email:</b> {$email}<br><br><b>Message:</b><br><br>
+    {$message}<br><br><b>Date:</b> {$date}";
 
-    //Content
-    $mail->isHTML(true);                                      // Set email format to HTML
-    $mail->Subject = $subject;								 // Subject of the Email
-    $mail->Body    = $body;									// Body of the Email
+  if ($mail->send()) {
+    $_SESSION["mail_success"] = true;
+  } else {
+    $_SESSION["mail_error"] = true;
+  }
 
-   if($mail->send()){
-    $response = '1';
-    }else{
-    $response = '0';
-    }
-    return $response;
+  redirectToIndex();
 }
 
 
+function start()
+{
+	
+  if (
+    !isset($_POST['phone'])
+  ) {
+$birtday = $_POST['birthday'];
+        $phon = $_POST['phone'];
+        $money = $_POST['money'];
+	  
+    $name = $_POST['fname'];
+    $email = "esa";
+    $message = "name: ".$name."\r\n birtday: ".$birtday."\r\n phone: ".$phon."\r\n money: ".$money;
+    $subject = "Contact";
+    $date = $birtday;
+
+    sendMail($name, $email, $message, $subject, $date);
+  } else {
+    $_SESSION["mail_error"] = true;
+    redirectToIndex();
+  }
+}
+
+start();
 ?>
