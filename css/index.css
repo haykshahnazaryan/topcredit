@@ -499,10 +499,16 @@ footer {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    padding: 18px;
+    padding: 18px 20px;
     border-radius: 50%;
     background-color: white;
+    border: 1px solid white;
     box-shadow: 5px 5px 5px 3px rgb(0 0 0 / 50%);
+    transition: all 300ms ease-out;
+}
+.up_btn:hover {
+    background-color: transparent;
+    transition: all 300ms ease-in;
 }
 .up_btn svg {
     transform: rotate(180deg);
