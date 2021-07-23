@@ -32,7 +32,7 @@ $mail->addAddress('armen.safs@gmail.com');     // Кому будет уходи
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Заявка с тестового сайта';
-$mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone. '<br>Почта этого пользователя: ' .$birthday.'<br>'.$money;
+$mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone. '<br>Почта этого пользователя: ' .$birthday;
 $mail->AltBody = '';
 
 if(!$mail->send()) {
