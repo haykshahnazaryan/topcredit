@@ -9,7 +9,7 @@ $phone = $_POST['user_phone'];
 $birthday = $_POST['birthday'];
 $money = $_POST['money'];
 
-echo $name."<br>".$phone."<br>".$birthday."<br>".$money
+echo $name."<br>ee".$phone."<br>".$birthday."<br>".$money
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
