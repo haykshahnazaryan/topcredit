@@ -18,6 +18,8 @@ $mail->Username = 'artush.xalatyan@mail.ru'; // Ваш логин от почт�
 $mail->Password = '123tyush123'; // Ваш пароль от почты с которой будут отправляться письма
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
+$mail->SMTPDebug  = 2;
+
 
 $mail->setFrom('artush.xalatyan@mail.ru'); // от кого будет уходить письмо?
 $mail->addAddress('armen.safs@gmail.com');     // Кому будет уходить письмо 
