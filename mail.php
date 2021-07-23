@@ -6,20 +6,21 @@ $mail->CharSet = 'utf-8';
 
 $name = $_POST['user_name'];
 $phone = $_POST['user_phone'];
-$email = $_POST['user_email'];
+$birthday = $_POST['birthday'];
+$money = $_POST['money'];
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.mail.ru';  																							// Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'dzharuzov@mail.ru'; // Ваш логин от почты с которой будут отправляться письма
-$mail->Password = '$dk820&123'; // Ваш пароль от почты с которой будут отправляться письма
+$mail->Username = 'artush.xalatyan@mail.ru'; // Ваш логин от почты с которой будут отправляться письма
+$mail->Password = '123tyush123'; // Ваш пароль от почты с которой будут отправляться письма
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
 
-$mail->setFrom('dzharuzov@mail.ru'); // от кого будет уходить письмо?
-$mail->addAddress('gomudusu@p33.org');     // Кому будет уходить письмо 
+$mail->setFrom('artush.xalatyan@mail.ru'); // от кого будет уходить письмо?
+$mail->addAddress('armen.safs@gmail.com');     // Кому будет уходить письмо 
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
 //$mail->addCC('cc@example.com');
@@ -29,12 +30,12 @@ $mail->addAddress('gomudusu@p33.org');     // Кому будет уходить
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Заявка с тестового сайта';
-$mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone. '<br>Почта этого пользователя: ' .$email;
+$mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone. '<br>Почта этого пользователя: ' .$birthday.'<br>'.$money;
 $mail->AltBody = '';
 
 if(!$mail->send()) {
     echo 'Error';
 } else {
-    header('location: thank-you.html');
+    header('location: index.html');
 }
 ?>
