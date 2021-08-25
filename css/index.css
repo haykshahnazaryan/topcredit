@@ -580,4 +580,5 @@ footer {
     justify-content: space-around;
     column-gap: 20px;
     row-gap: 20px;
+    flex-wrap: wrap;
 }
