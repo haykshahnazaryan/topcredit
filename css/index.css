@@ -531,3 +531,9 @@ footer {
     margin-top: -20px;
     margin-bottom: -10px;
 }
+.about_us_masin {
+    font-family: NotoSansArmenian-medium;
+    font-size: 18px;
+    font-weight: normal;
+    color: black;
+}
