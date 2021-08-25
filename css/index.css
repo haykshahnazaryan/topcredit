@@ -99,7 +99,7 @@ header {
 .welcome_section {
     background-color: #b0b1b3;
     width: 100%;
-    height: max-content;
+    height: auto;
     padding-bottom: 40px;
     background-image: url(../img/unnamed.png);
     background-repeat: no-repeat;
