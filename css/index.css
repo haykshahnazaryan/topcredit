@@ -495,11 +495,15 @@ footer {
     position: relative;
 }
 .up_btn {
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     cursor: pointer;
     position: fixed;
     bottom: 25px;
     right: 25px;
-    padding: 18px 20px;
     border-radius: 50%;
     background-color: transparent;
     border: 1px solid white;
