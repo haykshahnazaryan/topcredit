@@ -97,11 +97,11 @@ header {
 /* main */
 /* welcome section */
 .welcome_section {
-    background-color: #b0b1b3;
+    <!-- background-color: #b0b1b3; -->
     width: 100%;
     height: auto;
     padding-bottom: 15px;
-    background-image: url(../img/unnamed.png);
+    background-image: url(../img/wwee.png);
     background-repeat: no-repeat;
     background-position: right;
 }
