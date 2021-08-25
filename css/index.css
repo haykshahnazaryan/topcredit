@@ -561,7 +561,9 @@ footer {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    flex-direction: column;
     margin-bottom: 6px;
+    align-items: center;
 }
 .coment_info_text {
     font-family: "NotoSansArmenian-medium";
